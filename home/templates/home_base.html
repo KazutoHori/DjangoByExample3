@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChooseOne</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+    <style media="screen">
+      body{
+        background: #f0e68c;
+      }
+    </style>
+</head>
+<body>
+
+<canvas id="my-pie-chart" width="400" height="200"></canvas>
+
+<script>
+
+    const dataset = [1.21, 1.71, 2.24, 3.24, 5.25, 10.29, 10.3];
+    const labels = ["Japan", "Russian Federation", "India", "European Union", "United States", "China", "Others"];
+    const colors = [];
+
+    dataset.forEach((entry, index) => {
+        colors.push('hsla('+((index+5)*50)+',75%,75%,1)');
+    });
+
+    const dataObj = {
+        labels: labels,
+        datasets: [{
+            data: dataset,
+            backgroundColor: colors,
+            borderWidth: 1
+        }]
+    }
+
+    const chartObj = {
+        type: "pie",
+        data: dataObj,
+        options:{
+            title: {
+                text: "CO2 emissions (billions of tonnes)",
+                display: true,
+                fontSize: 24
+            },
+            legend: {
+                labels: {
+                    boxWidth: 20,
+                },
+                position: 'right'
+            },
+            pieceLabel: {
+                fontColor: '#000',
+                render: 'value',
+                textShadow: true,
+                position: 'border'
+            },
+
+        }
+    };
+    new Chart("my-pie-chart", chartObj);
+
+
+</script>
+
+</body>
+</html>
