@@ -25,7 +25,7 @@ SECRET_KEY = '_faq4of+#7_y-0ga4i04&g#qqs1-)o!fud4)_5w7gv+rm+a^vf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chooseone.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Local
     'home.apps.HomeConfig',
+    'contents.apps.ContentsConfig',
 ]
 
 SITE_ID=1
@@ -64,6 +65,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -131,6 +133,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+from django.utils.translation import gettext_lazy as _
+LANGUAGE = (
+    ('en', _('English')),
+    ('ja', _('Japanese')),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -164,10 +172,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
 LOGIN_REDIRECT_URL='dashboard'
 LOGIN_URL='login'
 LOGOUT_URL='logout'
@@ -196,3 +200,16 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+
+REDIS_HOST='localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
+
+# smile
+# earth meal rinne
+# love and wash
