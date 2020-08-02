@@ -1,0 +1,9 @@
+{% for content in contents %}
+  <div class="content">
+    <div class="info">
+      <a href="{{content.get_absolute_url}}" class='title'>
+        {{content.title}}
+      </a>
+    </div>
+  </div>
+{% endfor %}

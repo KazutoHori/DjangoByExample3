@@ -16,6 +16,8 @@ class Content(models.Model):
     users_like=models.ManyToManyField(settings.AUTH_USER_MODEL,
                             related_name='contents_liked',
                             blank=True)
+    total_likes=models.PositiveIntegerField(db_index=True, default=0)
+
     # votes
     # views
     # shares

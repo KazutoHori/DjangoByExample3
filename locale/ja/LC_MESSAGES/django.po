@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-01 23:37+0900\n"
+"POT-Creation-Date: 2020-08-02 16:10+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,9 @@ msgstr "パスワード（確認)"
 msgid ""
 "Drag the following button to your bookmarks toolbar to bookmark images from "
 "other websites → "
-msgstr "他のウェブサイトの画像をブックマークするには次のボタンをツールバーまで伸ばそう！"
+msgstr ""
+"他のウェブサイトの画像をブックマークするには次のボタンをツールバーまで伸ばそ"
+"う！"
 
 #: account/templates/account/dashboard.html:11
 msgid "Welcome to your dashboard. You can "
@@ -59,3 +61,11 @@ msgstr "英語"
 #: chooseone_project/settings.py:139
 msgid "Japanese"
 msgstr "日本語"
+
+#: contents/templates/contents/content/list.html:5
+msgid "Contents bookmarked"
+msgstr "ブックマークされたコンテンツ"
+
+#: contents/templates/contents/content/ranking.html:5
+msgid "Contents ranking"
+msgstr "「閲覧数の多い」ランキング"

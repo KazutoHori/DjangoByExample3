@@ -6,6 +6,12 @@ from .models import Content
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import redis
+from django.conf import settings
+
+r=redis.Redis(host=settings.REDIS_HOST,
+                port=settings.REDIS_PORT,
+                db=settings.REDIS_DB)
 
 @login_required
 def content_create(request):
@@ -25,8 +31,11 @@ def content_create(request):
 
 def content_detail(request, id, slug):
     content=get_object_or_404(Content, id=id, slug=slug)
+    total_views=r.incr(f'content:{content.id}:views')
+    r.zincrby('content_ranking', 1, content.id)
     return render(request, 'contents/content/detail.html',
-                    {'section': 'contents', 'content': content})
+                    {'section': 'contents', 'content': content,
+                     'total_views': total_views})
 
 @login_required
 @require_POST
@@ -63,3 +72,15 @@ def content_list(request):
                     {'section': 'contents', 'contents': contents})
     return render(request, 'contents/content/list.html',
                     {'section': 'contents', 'contents': contents})
+
+@login_required
+def content_ranking(request):
+    content_ranking=r.zrange('content_ranking', 0, -1,
+                                desc=True)[:10]
+    content_ranking_ids=[int(id) for id in content_ranking]
+    most_viewed=list(Content.objects.filter(
+        id__in=content_ranking_ids
+    ))
+    most_viewed.sort(key=lambda x: content_ranking_ids.index(x.id))
+    return render(request, 'contents/content/ranking.html',
+                    {'section': 'contents', 'most_viewed': most_viewed})
