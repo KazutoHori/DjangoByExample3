@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 16:10+0900\n"
+"POT-Creation-Date: 2020-08-03 17:22+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: account/forms.py:10
+#: accounts/forms.py:10
 msgid "Password"
 msgstr "パスワード"
 
-#: account/forms.py:11
+#: accounts/forms.py:11
 msgid "Repeat password"
 msgstr "パスワード（確認)"
 
-#: account/templates/account/dashboard.html:10
+#: accounts/templates/account/dashboard.html:10
 msgid ""
 "Drag the following button to your bookmarks toolbar to bookmark images from "
 "other websites → "
@@ -34,31 +34,31 @@ msgstr ""
 "他のウェブサイトの画像をブックマークするには次のボタンをツールバーまで伸ばそ"
 "う！"
 
-#: account/templates/account/dashboard.html:11
+#: accounts/templates/account/dashboard.html:11
 msgid "Welcome to your dashboard. You can "
 msgstr "ダッシュボードへようこそ！"
 
-#: account/templates/account/dashboard.html:11
+#: accounts/templates/account/dashboard.html:11
 msgid "edit your profile"
 msgstr "プロフィールを編集"
 
-#: account/templates/account/dashboard.html:11
+#: accounts/templates/account/dashboard.html:11
 msgid " or "
 msgstr "したり"
 
-#: account/templates/account/dashboard.html:11
+#: accounts/templates/account/dashboard.html:11
 msgid "change your password"
 msgstr "パスワードを変更"
 
-#: account/templates/account/dashboard.html:11
+#: accounts/templates/account/dashboard.html:11
 msgid "."
 msgstr "できます"
 
-#: chooseone_project/settings.py:138
+#: chooseone_project/settings.py:139
 msgid "English"
 msgstr "英語"
 
-#: chooseone_project/settings.py:139
+#: chooseone_project/settings.py:140
 msgid "Japanese"
 msgstr "日本語"
 

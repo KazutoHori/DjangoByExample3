@@ -203,6 +203,9 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'
 # ACCOUNT_UNIQUE_EMAIL = True
 
 
+DEFAULT_FROM_EMAIL='admin@chooseone.com'
+
+
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
