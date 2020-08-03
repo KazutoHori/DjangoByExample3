@@ -20,10 +20,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('rosetta/', include('rosetta.urls')),
 
     # User management
     # path('accounts/', include('allauth.urls')),
-    path('account/', include('account.urls')),
+    path('accounts/', include('accounts.urls')),
 
     # Local apps
     path('', include('home.urls')),

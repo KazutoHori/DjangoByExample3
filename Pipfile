@@ -16,6 +16,7 @@ pyopenssl = "==19.0.0"
 pillow = "==7.0.0"
 werkzeug = "==0.16.0"
 redis = "==3.4.1"
+django-rosetta = "==0.9.3"
 
 [requires]
 python_version = "3.8.3"

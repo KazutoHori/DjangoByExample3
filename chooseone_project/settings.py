@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['chooseone.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     # Third-party
     'crispy_forms',
     # 'allauth',
-    # 'allauth.account',
+    'allauth.account',
     'social_django',
     'django_extensions',
+    'rosetta',
 
     # Local
     'home.apps.HomeConfig',
@@ -154,7 +155,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
 STATIC_ROOT=os.path.join(BASE_DIR, 'static/')
-
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
@@ -181,7 +181,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
 
 AUTHENTICATION_BACKENDS=[
     'django.contrib.auth.backends.ModelBackend',
-    'account.authentication.EmailAuthBackend',
+    'accounts.authentication.EmailAuthBackend',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.google.GoogleOAuth2',
