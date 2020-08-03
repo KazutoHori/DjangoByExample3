@@ -23,7 +23,7 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls')),
 
     # User management
-    # path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),
     path('accounts/', include('accounts.urls')),
 
     # Local apps

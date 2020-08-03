@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block title %}Log-in{% endblock %}
 {% block content %}
-  <h1>Log-in</h1>
+  <h1>Log-in (account directory)</h1>
   <p>Please, use the following form to log-in:</p>
   <form method="post">{% csrf_token %}
     {{ form|crispy }}

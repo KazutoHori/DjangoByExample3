@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_faq4of+#7_y-0ga4i04&g#qqs1-)o!fud4)_5w7gv+rm+a^vf'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     # Third-party
     'crispy_forms',
-    # 'allauth',
+    'allauth',
     'allauth.account',
     'social_django',
     'django_extensions',
@@ -163,8 +163,8 @@ STATICFILES_FINDERS = [
 
 SITE_ID=1
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -174,7 +174,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL='dashboard'
 LOGIN_URL='login'
-LOGOUT_URL='logout'
+LOGOUT_URL='account_signup'
+# ACCOUNT_LOGOUT_REDIRECT='dashboard'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
@@ -195,11 +196,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '722704825746-dfh6sto2skudnb6gjsn4mbahn3h5eesm.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '9B4xwRklxzY_26rXEZziYXx_' # Google Consumer Secret
 
 
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_UNIQUE_EMAIL = True
 
 
 LOCALE_PATHS = (

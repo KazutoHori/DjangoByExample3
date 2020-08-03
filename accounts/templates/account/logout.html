@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log Out{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Log Out (allauth)</h1>
+  <p>Are you sure you want to log out?</p>
+  <form class="" action="{% url 'account_logout' %}" method="post">{% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class='btn btn-success'>Log Out</button>
+  </form>
+</div>
+{% endblock %}
