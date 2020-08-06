@@ -20,7 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '_faq4of+#7_y-0ga4i04&g#qqs1-)o!fud4)_5w7gv+rm+a^vf'
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
@@ -153,8 +155,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
-STATIC_ROOT=os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
+# STATIC_ROOT=os.path.join(BASE_DIR, 'static/')
+
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
@@ -195,6 +198,8 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '722704825746-dfh6sto2skudnb6gjsn4mbahn3h5eesm.apps.googleusercontent.com' # Google Consumer Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '9B4xwRklxzY_26rXEZziYXx_' # Google Consumer Secret
 
+SOCIAL_AUTH_TWITTER_KEY='hrgYMmsK2BAoNpy33UBkwoX2n'
+SOCIAL_AUTH_TWITTER_SECRET='dAHcdhsFKMePsniI3YmYhRbnkc4RezS9lEv1iRUO6iqsDIVlaP'
 
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_USERNAME_REQUIRED = True
