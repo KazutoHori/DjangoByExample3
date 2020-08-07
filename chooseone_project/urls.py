@@ -29,7 +29,7 @@ urlpatterns = [
     # Local apps
     path('', include('home.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('contents/', include('contents.urls', namespace='contents')),
+    path('contents', include('contents.urls', namespace='contents')),
 ]
 
 if settings.DEBUG:
